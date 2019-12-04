@@ -9,7 +9,7 @@ class Database
     private $username = "root";
     private $password = "";
     private $dbname = "";
-    public function __construct($database_name="cpe")
+    public function __construct($database_name="project")
     {
         $this->dbname = $database_name;
     }

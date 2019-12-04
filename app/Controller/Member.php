@@ -9,7 +9,7 @@ class Member
       $fromedata = $request->getParams();
       $db = new \App\Tools\Database();
       $responseData = null;
-      $result = $db->query("SELECT * FROM member WHERE username='".$fromedata['username']."' LIMIT 1 ");
+      $result = $db->query("SELECT * FROM user WHERE username='".$fromedata['username']."' LIMIT 1 ");
       if($result['rowCount']>0){
         if($result['result'][0]['password']==$fromedata['password']){
            $responseData = array(
@@ -20,7 +20,7 @@ class Member
           }
         else{
         $responseData = array(
-          "message" => "รหัสผ่านไม่ถูก",
+          "message" => "รหัสผ่านไม่ถูกต้อง",
           "success" => false,
         );
 
